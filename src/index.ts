@@ -186,7 +186,7 @@ app.delete("/tasks/:id", async (req: Request, res: Response): Promise<void> => {
 
 const startServer = async () => {
   await connectToMongoDB();
-  app.listen(5038, () => {
+  app.listen(process.env.PORT || 5038, () => {
     console.log("Server running on port 5038");
   });
 };
